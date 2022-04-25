@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <h1 style="color: green;font-size-adjust: revert">Liste of offer</h1>
+      <table class="table table-striped ">
+        <thead>
+        <tr> <th>Id offer</th> <th>offer Price</th> <th> offer Start Date</th>  <th>interview Date</th><th>profession</th> <th>Delete</th><th>Update</th></tr>
+        </thead>
+        <tbody *ngFor="let offer of offers">
+        <tr>
+          <th scope="row">{{offer.idOffer}}</th>
+
+          <td>{{offer.offerPrice}}</td>
+          <td>{{offer.offerStartDate}}</td>
+          <td>{{offer.interviewDate}}</td>
+          <td>{{offer.profession}}</td>
+          <td><button class="btn btn-danger" (click)="deleteOfferById(offer)" >Delete</button></td>
+          <td><a class="btn btn-success" [routerLink]="['/home/offer-management/updateOffer',offer.idOffer]">Modifier</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
