@@ -16,7 +16,7 @@
                             <ngx-qrcode [elementType]="elementType" [value]="abon.toString()" [width]="500" [errorCorrectionLevel] = "correctionLevel"></ngx-qrcode>
                         </td>
                         <td><button class="btn btn-danger" (click)="supprimerAbonement(abon)" >Supprimer</button></td>
-                        <td><button class="btn btn-success" [routerLink]="['/updateabonement/',abon.idSubscription]">Modifier</button></td>
+                        <td><button class="btn btn-success" [routerLink]="['/home/abonement-management/updateabonement/',abon.idSubscription]">Modifier</button></td>
                     </tr>
                 </tbody>
             </table>

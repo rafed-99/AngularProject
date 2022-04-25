@@ -4,16 +4,14 @@ import {Observable} from 'rxjs';
 import {Offer} from "../models/Offer";
 
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class OfferService {
-  apiURL = 'http://localhost:8085/offer/retrive-All-Offers';
-  supUrl = 'http://localhost:8085/offer/DeleteOfferById';
-  addUrl = 'http://localhost:8085/offer/AddOffer1';
-  upUrl = 'http://localhost:8085/offer/updateoffer/{idOffer}';
+  apiURL = 'http://localhost:8080/offer/retrive-All-Offers';
+  supUrl = 'http://localhost:8080/offer/DeleteOfferById';
+  addUrl = 'http://localhost:8080/offer/AddOffer1';
+  upUrl = 'http://localhost:8080/offer/updateoffer/{idOffer}';
   constructor(private http: HttpClient) {  }
   RetrieveOffer(): Observable<Offer[]>{
     return this.http.get<Offer[]>(this.apiURL);
