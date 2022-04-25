@@ -15,6 +15,9 @@ import { FooterComponent } from './backoffice/footer/footer.component';
 import { HooomeComponent } from './backoffice/hooome/hooome.component';
 import { ContentComponent } from './content/content.component';
 import {AdminDashLayoutComponent} from './backoffice/admin-dash-layout/admin-dash-layout.component';
+import { OfferListComponent } from './offer-list/offer-list.component';
+import { AddOfferComponent } from './add-offer/add-offer.component';
+import { UpdateOfferComponent } from './update-offer/update-offer.component';
 
 
 
@@ -35,6 +38,9 @@ import {AdminDashLayoutComponent} from './backoffice/admin-dash-layout/admin-das
     HooomeComponent,
     ContentComponent,
     AdminDashLayoutComponent,
+    OfferListComponent,
+    AddOfferComponent,
+    UpdateOfferComponent,
 
 
 
