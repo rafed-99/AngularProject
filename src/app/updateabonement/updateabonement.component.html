@@ -1,0 +1,43 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Abonement :</h2>
+    </div>
+    
+    <form >
+        
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+            <label >Id Abonement</label>
+            <input readonly type="text" [(ngModel)]="currentAbonement.idSubscription" name="idProduit" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >Contenu</label>
+            <input type="text" [(ngModel)]= "currentAbonement.contenu" name="contenu" class="form-control">
+     </div>  
+    
+     <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Level</label>
+     <select class="form-control" name="role" id="role" [(ngModel)]="currentAbonement.level">
+      <option value=""></option>
+      <option value="BRONZE">BRONZE</option>
+      <option value="SILVER">SILVER</option>
+      <option value="GOLD">GOLD</option>
+      <option value="DIAMOND">DIAMOND</option>
+     </select>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+            <label >Date Debut</label>
+            <input type="date" [(ngModel)]= "currentAbonement.datedebut" name="datedebut" class="form-control">
+    </div>
+    
+    <div class="col-sm-4 col-md-4 col-lg-4">
+            <label >Date Fin</label>
+            <input type="date" [(ngModel)]= "currentAbonement.datefin" name="datefin" class="form-control">
+    </div>
+    
+    <div class="mt-2">
+    <button type="submit" (click)="updateAbonement()" class="btn btn-success">Modifier</button>    
+    </div>
+    </form>
+    </div>

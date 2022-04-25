@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr> <th>Id</th> <th>Contenu</th> <th>Level</th> <th>Date Debut</th><th>Date Fin</th><th>QR Code</th><th>Supprimer</th><th>Modifier</th></tr>
+                </thead>
+                <tbody *ngFor="let abon of abonements">
+                    <tr>
+                        <th scope="row">{{abon.idSubscription}}</th>
+                        <td>{{abon.contenu}}</td>
+                        <td>{{abon.level}}</td>
+                        <td>{{abon.datedebut | date:'dd/MM/yyyy' }}</td>
+                        <td>{{abon.datefin | date:'dd/MM/yyyy' }}</td>
+                        <td>
+                            <ngx-qrcode [elementType]="elementType" [value]="abon.toString()" [width]="500" [errorCorrectionLevel] = "correctionLevel"></ngx-qrcode>
+                        </td>
+                        <td><button class="btn btn-danger" (click)="supprimerAbonement(abon)" >Supprimer</button></td>
+                        <td><button class="btn btn-success" [routerLink]="['/updateabonement/',abon.idSubscription]">Modifier</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
