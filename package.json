@@ -19,6 +19,11 @@
     "@angular/platform-browser": "~9.1.13",
     "@angular/platform-browser-dynamic": "~9.1.13",
     "@angular/router": "~9.1.13",
+    "angular2-qrcode": "^2.0.3",
+    "angularx-qrcode": "^13.0.14",
+    "bootstrap": "^5.1.3",
+    "chart.js": "^3.7.1",
+    "ngx-qrcode2": "^9.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
