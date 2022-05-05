@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class AddabonementComponent {
 
-  newAbonement = new Abonement();  
+  newAbonement = new Abonement();
   message :string;
- 
+
   constructor(private _service : AbonementService,
     private router :Router) {
            }
@@ -25,12 +25,14 @@ export class AddabonementComponent {
   addAbonement(){
     this._service.addAbonement(this.newAbonement).subscribe(abon => {
     console.log(abon);
-  
+
     });
 
     this.router.navigate(['/home/abonement-management/abonement']).then(() => {
       window.location.reload();
+
       });
- 
+
 }
+
 }

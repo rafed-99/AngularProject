@@ -25,6 +25,7 @@ const routes: Routes = [
       {path: 'addabonement', component : AddabonementComponent},
       {path: 'updateabonement/:id', component: UpdateabonementComponent},
 
+
     ]
   },
       {

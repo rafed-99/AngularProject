@@ -1,3 +1,21 @@
+<ng-container>
+  <form  (click)="SearchMultiple(key.value)">
+    <div class="from-group row">
+      <div class="col-6 col-sm-3">
+        <input class="form-control ag-row-hover"  type="search"  #key="ngModel" ngModel
+               name="key" placeholder="Search Abonements" >
+      </div>
+
+      <div class="col-6 col-sm-3">
+        <button class="btn btn-outline-soundcloud ag-row " type="submit" > Search </button>
+      </div>
+    </div>
+  </form>
+  <div class="modal-body">
+    <h6>Download PDF</h6>
+    <a (click)="exportpdf()"> <img src="assets/images/icons/kisspng-pdf-computer-icons-download-pdf-5b3643b87051a8.5398751915302829364601.jpg" width="50px " height="100px" alt=""></a>
+  </div>
+</ng-container>
 <div class="container">
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -5,7 +23,7 @@
                 <thead>
                 <tr> <th>Id</th> <th>Contenu</th> <th>Level</th> <th>Date Debut</th><th>Date Fin</th><th>QR Code</th><th>Supprimer</th><th>Modifier</th></tr>
                 </thead>
-                <tbody *ngFor="let abon of abonements">
+                <tbody *ngFor="let abon of abonements | paginate: { itemsPerPage: 5, currentPage: page , totalItems: totalLength }">
                     <tr>
                         <th scope="row">{{abon.idSubscription}}</th>
                         <td>{{abon.contenu}}</td>
@@ -13,7 +31,7 @@
                         <td>{{abon.datedebut | date:'dd/MM/yyyy' }}</td>
                         <td>{{abon.datefin | date:'dd/MM/yyyy' }}</td>
                         <td>
-                            <ngx-qrcode [elementType]="elementType" [value]="abon.toString()" [width]="500" [errorCorrectionLevel] = "correctionLevel"></ngx-qrcode>
+                            <ngx-qrcode [elementType]="elementType" [value]="abon.toString()" [width]="50" [errorCorrectionLevel] = "correctionLevel"></ngx-qrcode>
                         </td>
                         <td><button class="btn btn-danger" (click)="supprimerAbonement(abon)" >Supprimer</button></td>
                         <td><button class="btn btn-success" [routerLink]="['/home/abonement-management/updateabonement/',abon.idSubscription]">Modifier</button></td>
@@ -22,5 +40,6 @@
             </table>
         </div>
     </div>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
 

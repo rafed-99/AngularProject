@@ -11,19 +11,18 @@ import {OfferService} from '../_service/offer.service';
 export class UpdateOfferComponent implements OnInit {
 
   currentOffer = new Offer();
-
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private offerService: OfferService) { }
 
   ngOnInit(): void { this.offerService.consulterOffer(this.activatedRoute.snapshot.params.id).
-  subscribe( off => { this.currentOffer = off; });
+  subscribe( prod => { this.currentOffer = prod; });
   }
 
 
   updateOffer() {
     this.offerService.updateOffer(this.currentOffer).subscribe(() => {
-        this.router.navigate(['/home/offer-management/offers']);
+        this.router.navigate(['offers']);
       }, (error) => { alert('Problème lors de la modification !'); }
     );
   }
