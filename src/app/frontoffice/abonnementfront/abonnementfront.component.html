@@ -1,0 +1,40 @@
+<ng-container>
+  <form  (click)="SearchMultiple(key.value)">
+    <div class="from-group row">
+      <div class="col-6 col-sm-3">
+        <input class="form-control ag-row-hover"  type="search"  #key="ngModel" ngModel
+               name="key" placeholder="Search Abonements" >
+      </div>
+
+      <div class="col-6 col-sm-3">
+        <button class="btn btn-outline-soundcloud ag-row " type="submit" > Search </button>
+      </div>
+    </div>
+  </form>
+</ng-container>
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr> <th>Id</th> <th>Contenu</th> <th>Level</th> <th>Date Debut</th><th>Date Fin</th><th>QR Code</th><th>Modifier</th></tr>
+        </thead>
+        <tbody *ngFor="let abon of abonements | paginate: { itemsPerPage: 5, currentPage: page , totalItems: totalLength }">
+        <tr>
+          <th scope="row">{{abon.idSubscription}}</th>
+          <td>{{abon.contenu}}</td>
+          <td>{{abon.level}}</td>
+          <td>{{abon.datedebut | date:'dd/MM/yyyy' }}</td>
+          <td>{{abon.datefin | date:'dd/MM/yyyy' }}</td>
+          <td>
+            <ngx-qrcode [elementType]="elementType" [value]="abon.toString()" [width]="50" [errorCorrectionLevel] = "correctionLevel"></ngx-qrcode>
+          </td>
+          <td><button class="btn btn-success" [routerLink]="['/home/abonement-management/updateabonement/',abon.idSubscription]">Modifier</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+
