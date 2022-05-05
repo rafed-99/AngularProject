@@ -19,18 +19,16 @@
       <label >interviewDate</label>
       <input type="Date" [(ngModel)]= "newOffer.interviewDate" name="interviewDate" class="form-control">
     </div>
-    <form>
-      <label >Choose a Profession:</label>
-      <select [(ngModel)]= "newOffer.profession">
-        <option value="DOCTOR">DOCTOR</option>
-        <option value="STUDENT">STUDENT</option>
-        <option value="ENGINEER">ENGINEER</option>
-        <option value="PROFESSOR">PROFESSOR</option>
-        <option value="ATTOURNEY">ATTOURNEY</option>
-        <option value="TRAINER">TRAINER</option>
-        <option value="OTHER">OTHER</option>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Profession</label>
+      <select class="form-control" name="role" id="role" [(ngModel)]="newOffer.profession">
+      <option value=""></option>
+      <option value="DOCTOR">DOCTOR</option>
+      <option value="STUDENT">STUDENT</option>
+      <option value="ENGINEER">ENGINEER</option>
+      <option value="PROFESSOR">PROFESSOR</option>
       </select>
-    </form>
+    </div>
 
     <button type="submit" (click)="addOffer()" class="btn btn-success">Ajouter</button>
     <div>

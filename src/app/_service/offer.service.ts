@@ -1,18 +1,25 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Offer} from "../models/Offer";
+import {Offer} from '../models/Offer';
 
+const httpOptions = {
+  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class OfferService {
-  apiURL = 'http://localhost:8080/offer/retrive-All-Offers';
-  supUrl = 'http://localhost:8080/offer/DeleteOfferById';
-  addUrl = 'http://localhost:8080/offer/AddOffer1';
-  upUrl = 'http://localhost:8080/offer/updateoffer/{idOffer}';
   constructor(private http: HttpClient) {  }
+  apiURL = 'http://localhost:8085/offer/retrive-All-Offers';
+  supUrl = 'http://localhost:8085/offer/DeleteOfferById';
+  addUrl = 'http://localhost:8085/offer/AddOffer1';
+  upUrl = 'http://localhost:8085/offer/updateoffer/{idOffer}';
+  apiURL1 = 'http://localhost:8085/offer/retrieveOfferbyid/{id}';
+  pdfUrl  = 'http://localhost:8085/offer/exportpdfoffer';
+   recUrl = 'http://localhost:8085/offer/listAllOffer';
+
   RetrieveOffer(): Observable<Offer[]>{
     return this.http.get<Offer[]>(this.apiURL);
   }
@@ -21,6 +28,9 @@ export class OfferService {
 
     return this.http.delete<Offer>(this.supUrl + '/' + id);
 
+  }
+  consulteOffer(id: number): Observable<Offer> {
+    return this.http.get<Offer>(this.apiURL1 + '/' + id);
   }
 
 
@@ -38,6 +48,18 @@ export class OfferService {
   {
     return this.http.put<Offer>(this.upUrl, prod);
   }
+
+  exportPdfOffer(): Observable<Blob>{
+    return this.http.get(this.pdfUrl, {responseType: 'blob'});
+  }
+
+
+  SearchMultiple(key: string): Observable<Offer[]>
+  {
+    return this.http.get<Offer[]>(this.recUrl + '/' + key);
+  }
+
+
 
 
 }

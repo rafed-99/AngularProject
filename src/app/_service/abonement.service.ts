@@ -12,15 +12,15 @@ const httpOptions = {
 })
 export class AbonementService {
 
-  apiURL = "http://localhost:8080/api/abonement/sub/allsubscriptions";
-  getSingleSub = "http://localhost:8080/api/abonement/retrieveSubscription";
-  addUrl = "http://localhost:8080/api/abonement/sub/addsubscriptions";
-  supUrl = "http://localhost:8080/api/abonement/deleteSubscription";
-  updateUrl = "http://localhost:8080/api/abonement/sub/modifysubscriptions";
-  affectUrl = "http://localhost:8090/api/abonement/assignSubscriptionToUser";
-  getByLevel = "http://localhost:8080/api/abonement/abonementByLevel";
-  getPer = "http://localhost:8080/api/abonement/percentagebylevel"
-  constructor(private _http:HttpClient) { }
+  apiURL = 'http://localhost:8080/api/abonement/sub/allsubscriptions';
+  getSingleSub = 'http://localhost:8080/api/abonement/retrieveSubscription';
+  addUrl = 'http://localhost:8080/api/abonement/sub/addsubscriptions';
+  supUrl = 'http://localhost:8080/api/abonement/deleteSubscription';
+  updateUrl = 'http://localhost:8080/api/abonement/sub/modifysubscriptions';
+  affectUrl = 'http://localhost:8090/api/abonement/assignSubscriptionToUser';
+  getByLevel = 'http://localhost:8080/api/abonement/abonementByLevel';
+  getPer = 'http://localhost:8080/api/abonement/percentagebylevel'
+  constructor(private _http: HttpClient) { }
   retrieveabonement(): Observable<Abonement[]>{
     return this._http.get<Abonement[]>(this.apiURL);
     }
@@ -28,9 +28,9 @@ export class AbonementService {
   addAbonement(abon: Abonement):Observable<Abonement>{
       return this._http.post<Abonement>(this.addUrl, abon, httpOptions);
   }
-    
+
   supprimerAbonement(id : number) {
- 
+
     return this._http.delete<Abonement>(this.supUrl+"/"+id);
     }
 
@@ -53,5 +53,5 @@ export class AbonementService {
     return this._http.get<number>(this.getPer);
   }
 
-    
+
 }

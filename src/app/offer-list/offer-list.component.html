@@ -1,12 +1,29 @@
+<ng-container xmlns:paginate="http://www.w3.org/1999/xhtml">
+  <form  (click)="SearchMultiple(key.value)">
+    <div class="from-group row">
+      <div class="col-6 col-sm-3">
+        <input class="form-control ag-row-hover"  type="search"  #key="ngModel" ngModel
+               name="key" placeholder="Search Offers" >
+      </div>
+
+      <div class="col-6 col-sm-3">
+        <button class="btn btn-outline-soundcloud ag-row " type="submit" > Search </button>
+      </div>
+    </div>
+  </form>
+</ng-container>
+
 <div class="container">
   <div class="card shadow mb-4">
     <div class="card-body">
       <h1 style="color: green;font-size-adjust: revert">Liste of offer</h1>
+      <a (click)="ExportPDF()"> <img src="assets/images/icons/pdf.png" alt=""></a>
+
       <table class="table table-striped ">
         <thead>
         <tr> <th>Id offer</th> <th>offer Price</th> <th> offer Start Date</th>  <th>interview Date</th><th>profession</th> <th>Delete</th><th>Update</th></tr>
         </thead>
-        <tbody *ngFor="let offer of offers">
+        <tbody *ngFor="let offer of offers | paginate: { itemsPerPage: 5, currentPage: page , totalItems: totalLength }">
         <tr>
           <th scope="row">{{offer.idOffer}}</th>
 
@@ -16,9 +33,11 @@
           <td>{{offer.profession}}</td>
           <td><button class="btn btn-danger" (click)="deleteOfferById(offer)" >Delete</button></td>
           <td><a class="btn btn-success" [routerLink]="['/home/offer-management/updateOffer',offer.idOffer]">Modifier</a></td>
+
         </tr>
         </tbody>
       </table>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
     </div>
   </div>
 </div>

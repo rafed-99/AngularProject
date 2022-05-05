@@ -18,6 +18,7 @@ import {AdminDashLayoutComponent} from './backoffice/admin-dash-layout/admin-das
 import { OfferListComponent } from './offer-list/offer-list.component';
 import { AddOfferComponent } from './add-offer/add-offer.component';
 import { UpdateOfferComponent } from './update-offer/update-offer.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -54,6 +55,8 @@ import { UpdateOfferComponent } from './update-offer/update-offer.component';
     HttpClientModule,
     NgxQRCodeModule,
     AppRoutingModule,
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

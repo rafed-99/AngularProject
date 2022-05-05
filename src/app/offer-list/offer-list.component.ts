@@ -11,17 +11,21 @@ import {Router} from '@angular/router';
 export class OfferListComponent implements OnInit {
 
   offers: Offer[];
-  constructor(private offerService: OfferService, private  router: Router) { }
+  totalLength: any;
+  page: number = 1;
+
+  constructor(private offerService: OfferService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.offerService.RetrieveOffer().subscribe(data => {
       console.log(data);
       this.offers = data;
+      this.totalLength = data.length;
     });
   }
 
-  deleteOfferById(o: Offer )
-  {
+  deleteOfferById(o: Offer) {
     console.log('suppppppppppppppppppppppppppppp supprimé' + o);
     const conf = confirm('Etes-vous sûr ?');
     if (conf) {
@@ -40,5 +44,41 @@ export class OfferListComponent implements OnInit {
     });
   }
 
+  ExportPDF() {
+    this.offerService.exportPdfOffer().subscribe(
+      x => {
+        const blob = new Blob([x], {type: 'application/pdf'});
+        if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+          window.navigator.msSaveOrOpenBlob(blob);
+          return;
+        }
+        const data = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = data;
+        link.download = 'offers.pdf';
+        link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
 
+        // tslint:disable-next-line:only-arrow-functions
+        setTimeout(function() {
+          window.URL.revokeObjectURL(data);
+          link.remove();
+        }, 100);
+      });
+
+  }
+
+  SearchMultiple(key: string): void {
+
+    if (key === '') {
+      this.offerService.RetrieveOffer();
+    } else if (key != null) {
+      this.offerService.SearchMultiple(key).subscribe(
+        (data: Offer[]) => {
+          this.offers = data;
+        }
+      );
+    }
+
+
+  }
 }
