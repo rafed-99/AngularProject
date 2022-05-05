@@ -19,6 +19,12 @@ import { OfferListComponent } from './offer-list/offer-list.component';
 import { AddOfferComponent } from './add-offer/add-offer.component';
 import { UpdateOfferComponent } from './update-offer/update-offer.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LayoutComponent } from './frontoffice/layout/layout.component';
+import { NavbarComponent } from './frontoffice/navbar/navbar.component';
+import { HoomeComponent } from './frontoffice/hoome/hoome.component';
+import { HeaderfComponent } from './frontoffice/headerf/headerf.component';
+import { FooterfComponent } from './frontoffice/footerf/footerf.component';
+import { AbonnementfrontComponent } from './frontoffice/abonnementfront/abonnementfront.component';
 
 
 @NgModule({
@@ -36,10 +42,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
     OfferListComponent,
     AddOfferComponent,
     UpdateOfferComponent,
-
-
-
-
+    LayoutComponent,
+    NavbarComponent,
+    HoomeComponent,
+    HeaderfComponent,
+    FooterfComponent,
+    AbonnementfrontComponent,
 
   ],
   imports: [

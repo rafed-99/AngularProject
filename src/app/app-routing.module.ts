@@ -7,6 +7,9 @@ import { UpdateabonementComponent } from './backoffice/updateabonement/updateabo
 import {OfferListComponent} from './offer-list/offer-list.component';
 import {AddOfferComponent} from './add-offer/add-offer.component';
 import {UpdateOfferComponent} from './update-offer/update-offer.component';
+import {LayoutComponent} from './frontoffice/layout/layout.component';
+import {HoomeComponent} from './frontoffice/hoome/hoome.component';
+import {AbonnementfrontComponent} from './frontoffice/abonnementfront/abonnementfront.component';
 
 
 
@@ -14,6 +17,21 @@ const routes: Routes = [
 
 
   {path: '', component: HooomeComponent},
+  {path:'oo',component: LayoutComponent },
+  {
+    path: 'front',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'frontEnd',
+        children: [
+          { path: 'homeF', component: HoomeComponent },
+          { path: 'abonementfront', component: AbonnementfrontComponent },
+
+        ]
+      },
+    ]
+  },
   {
     path: 'home',
     component: HooomeComponent,
@@ -24,10 +42,8 @@ const routes: Routes = [
       {path : 'abonement', component : AbonementComponent},
       {path: 'addabonement', component : AddabonementComponent},
       {path: 'updateabonement/:id', component: UpdateabonementComponent},
-
-
     ]
-  },
+      },
       {
         path: 'offer-management',
         children: [
