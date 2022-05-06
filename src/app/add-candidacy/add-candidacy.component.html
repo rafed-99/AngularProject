@@ -1,0 +1,39 @@
+<div class="container">
+  <div>
+    <h2>Add Candidacy :</h2>
+  </div>
+
+  <form >
+
+
+    <div >
+      <label >date Of Candidacy</label>
+      <input type="Date"[(ngModel)]= "newCandidacy.dateOfCandidacy" name="date Of Candidacy" class="form-control">
+    </div>
+
+    <div>
+      <label >CV</label>
+      <input type="text" [(ngModel)]= "newCandidacy.cv" name="cv" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Status</label>
+      <select class="form-control" name="role" id="role" [(ngModel)]="newCandidacy.status">
+
+      <option value="Accept">Accept</option>
+      <option value="Reject">Reject</option>
+      <option value="put_on_hold">put_on_hold</option>
+
+      </select>
+    </div>
+    <div>
+    <label >email</label>
+    <input type="text" [(ngModel)]= "newCandidacy.email" name="email" class="form-control">
+</div>
+    <button type="submit" (click)="addCandidacy()" class="btn btn-success">Ajouter</button>
+    <div>
+      <h3>{{ message }}</h3>
+    </div>
+  </form>
+</div>
+
