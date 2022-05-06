@@ -25,6 +25,10 @@ import { HoomeComponent } from './frontoffice/hoome/hoome.component';
 import { HeaderfComponent } from './frontoffice/headerf/headerf.component';
 import { FooterfComponent } from './frontoffice/footerf/footerf.component';
 import { AbonnementfrontComponent } from './frontoffice/abonnementfront/abonnementfront.component';
+import { StatOfferComponent } from './stat-offer/stat-offer.component';
+import { AddCandidacyComponent } from './add-candidacy/add-candidacy.component';
+import { CandidacyListComponent } from './candidacy-list/candidacy-list.component';
+import { UpdateCandidacyComponent } from './update-candidacy/update-candidacy.component';
 
 
 @NgModule({
@@ -48,6 +52,10 @@ import { AbonnementfrontComponent } from './frontoffice/abonnementfront/abonneme
     HeaderfComponent,
     FooterfComponent,
     AbonnementfrontComponent,
+    StatOfferComponent,
+    AddCandidacyComponent,
+    CandidacyListComponent,
+    UpdateCandidacyComponent,
 
   ],
   imports: [

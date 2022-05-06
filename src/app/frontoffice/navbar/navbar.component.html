@@ -41,11 +41,13 @@
       <div class="navbar-nav mx-auto py-0">
         <a href="index.html" class="nav-item nav-link active" [routerLink]="'/front/frontEnd/homeF'">Home</a>
         <a href="about.html" class="nav-item nav-link" [routerLink]="'/front/frontEnd/abonementfront'">About</a>
+        <a href="about.html" class="nav-item nav-link" [routerLink]="'/front/frontEnd/addCandidacy'">Add candidacy</a>
+        <a href="about.html" class="nav-item nav-link" [routerLink]="'/front/frontEnd/candidacys'"> list candidacy</a>
         <a href="course.html" class="nav-item nav-link">Courses</a>
         <div class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
           <div class="dropdown-menu m-0">
-            <a href="detail.html" class="dropdown-item">Course Detail</a>
+            <a href="detail.html" class="dropdown-item"[routerLink]="'/front/frontEnd/AddCandidacy'">Course Detail</a>
             <a href="feature.html" class="dropdown-item">Our Features</a>
             <a href="team.html" class="dropdown-item">Instructors</a>
             <a href="testimonial.html" class="dropdown-item">Testimonial</a>

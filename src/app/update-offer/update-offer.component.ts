@@ -16,13 +16,13 @@ export class UpdateOfferComponent implements OnInit {
               private offerService: OfferService) { }
 
   ngOnInit(): void { this.offerService.consulterOffer(this.activatedRoute.snapshot.params.id).
-  subscribe( prod => { this.currentOffer = prod; });
+  subscribe( off => { this.currentOffer = off; });
   }
 
 
   updateOffer() {
     this.offerService.updateOffer(this.currentOffer).subscribe(() => {
-        this.router.navigate(['offers']);
+        this.router.navigate(['/home/offer-management/offers']);
       }, (error) => { alert('Problème lors de la modification !'); }
     );
   }
