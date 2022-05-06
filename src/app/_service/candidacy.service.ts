@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpHeaders, HttpRequest} from '@angular/common/http';
 
 import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
 import {Candidacy} from '../models/Candidacy';
-
+const httpOptions = {
+  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
+};
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,8 @@ export class CandidacyService {
   supUrl = 'http://localhost:8085/offer/DeleteCandidacyById';
   addUrl = 'http://localhost:8085/offer/AddCandidacy1';
   upUrl = 'http://localhost:8085/offer/updateCandidacy/{idCandidacy}';
+  getUrlexcel = 'http://localhost:8085/offer/download/candidacies.xlsx';
+
   public dataForm: FormGroup;
   constructor(private http: HttpClient) {  }
   RetrieveCandidacy(): Observable<Candidacy[]>{
@@ -46,4 +50,12 @@ export class CandidacyService {
   {
     return this.http.put<Candidacy>(this.upUrl, prod);
   }
+
+
+
+  exportExcel(): Observable<Blob>{
+    return this.http.get(this.getUrlexcel, {responseType: 'blob'});
+  }
+
+
 }
