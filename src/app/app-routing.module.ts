@@ -12,7 +12,7 @@ import {HoomeComponent} from './frontoffice/hoome/hoome.component';
 import {AbonnementfrontComponent} from './frontoffice/abonnementfront/abonnementfront.component';
 import {CandidacyListComponent} from './candidacy-list/candidacy-list.component';
 import {AddCandidacyComponent} from './add-candidacy/add-candidacy.component';
-import {UpdateCandidacyComponent} from './update-candidacy/update-candidacy.component';
+
 
 
 
@@ -30,9 +30,8 @@ const routes: Routes = [
         children: [
           { path: 'homeF', component: HoomeComponent },
           { path: 'abonementfront', component: AbonnementfrontComponent },
-          { path: 'candidacys', component: CandidacyListComponent },
           { path: 'addCandidacy', component: AddCandidacyComponent },
-          { path: 'updateCandidacy/:id', component: UpdateCandidacyComponent },
+          { path: 'candidacys', component: CandidacyListComponent  },
 
         ]
       },

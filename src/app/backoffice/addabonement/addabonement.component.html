@@ -32,6 +32,9 @@
             <label >Date Fin</label>
             <input type="date" [(ngModel)]= "newAbonement.datefin" name="datefin" class="form-control">
     </div>
+        <ngx-recaptcha2 #captchaElem
+                        [siteKey]="siteKey">
+        </ngx-recaptcha2>
     <div class="mt-2">
     <button type="submit" (click)="addAbonement()" class="btn btn-success">Ajouter</button>
       <div>
@@ -40,5 +43,6 @@
 
     </div>
     </form>
+
     </div>
 

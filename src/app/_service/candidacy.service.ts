@@ -12,12 +12,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CandidacyService {
-  apiURL = 'http://localhost:8085/offer/retrive-All-Candidacys';
-  apiURL1 = 'http://localhost:8085/offer/retrieveCandidacybyid';
-  supUrl = 'http://localhost:8085/offer/DeleteCandidacyById';
-  addUrl = 'http://localhost:8085/offer/AddCandidacy1';
-  upUrl = 'http://localhost:8085/offer/updateCandidacy/{idCandidacy}';
-  getUrlexcel = 'http://localhost:8085/offer/download/candidacies.xlsx';
+  apiURL = 'http://localhost:8080/offer/retrive-All-Candidacys';
+  apiURL1 = 'http://localhost:8080/offer/retrieveCandidacybyid';
+  supUrl = 'http://localhost:8080/offer/DeleteCandidacyById';
+  addUrl = 'http://localhost:8080/offer/AddOffer1';
+  upUrl = 'http://localhost:8080/offer/updateCandidacy/{idCandidacy}';
+  getUrlexcel = 'http://localhost:8080/offer/download/candidacies.xlsx';
 
   public dataForm: FormGroup;
   constructor(private http: HttpClient) {  }
