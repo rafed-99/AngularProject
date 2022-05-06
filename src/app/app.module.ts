@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,8 @@ import { UpdateTrainingComponent } from './update-training/update-training.compo
 import { QuizComponent } from './quiz/quiz.component';
 import { AddQuizComponent } from './add-quiz/add-quiz.component';
 import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {Ng2OrderModule} from 'ng2-order-pipe';
 
 
 @NgModule({
@@ -70,6 +72,8 @@ import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
     NgxQRCodeModule,
     AppRoutingModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
