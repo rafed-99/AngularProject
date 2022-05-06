@@ -25,6 +25,12 @@ import { HoomeComponent } from './frontoffice/hoome/hoome.component';
 import { HeaderfComponent } from './frontoffice/headerf/headerf.component';
 import { FooterfComponent } from './frontoffice/footerf/footerf.component';
 import { AbonnementfrontComponent } from './frontoffice/abonnementfront/abonnementfront.component';
+import { TrainingComponent } from './training/training.component';
+import { AddTrainingComponent } from './add-training/add-training.component';
+import { UpdateTrainingComponent } from './update-training/update-training.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { AddQuizComponent } from './add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
 
 
 @NgModule({
@@ -48,6 +54,12 @@ import { AbonnementfrontComponent } from './frontoffice/abonnementfront/abonneme
     HeaderfComponent,
     FooterfComponent,
     AbonnementfrontComponent,
+    TrainingComponent,
+    AddTrainingComponent,
+    UpdateTrainingComponent,
+    QuizComponent,
+    AddQuizComponent,
+    UpdateQuizComponent,
 
   ],
   imports: [

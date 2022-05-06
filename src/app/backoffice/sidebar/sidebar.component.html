@@ -48,6 +48,32 @@
       </div>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+
+        <span class="menu-title">Training Management</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" [routerLink]="['/home/training/trainings']">Show Trainings</a></li>
+          <li class="nav-item"> <a class="nav-link" [routerLink]="['/home/training/addTraining']">Add Training</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+
+        <span class="menu-title">Quiz Management</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" [routerLink]="['/home/quiz/quizs']">Show Quizes</a></li>
+          <li class="nav-item"> <a class="nav-link" [routerLink]="['/home/quiz/addQuiz']">Add Quiz</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="pages/forms/basic_elements.html">
         <span class="menu-title">Forms</span>
         <i class="mdi mdi-format-list-bulleted menu-icon"></i>

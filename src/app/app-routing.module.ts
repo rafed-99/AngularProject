@@ -10,6 +10,12 @@ import {UpdateOfferComponent} from './update-offer/update-offer.component';
 import {LayoutComponent} from './frontoffice/layout/layout.component';
 import {HoomeComponent} from './frontoffice/hoome/hoome.component';
 import {AbonnementfrontComponent} from './frontoffice/abonnementfront/abonnementfront.component';
+import {TrainingComponent} from "./training/training.component";
+import {AddTrainingComponent} from "./add-training/add-training.component";
+import {UpdateTrainingComponent} from "./update-training/update-training.component";
+import {QuizComponent} from "./quiz/quiz.component";
+import {AddQuizComponent} from "./add-quiz/add-quiz.component";
+import {UpdateQuizComponent} from "./update-quiz/update-quiz.component";
 
 
 
@@ -17,7 +23,7 @@ const routes: Routes = [
 
 
   {path: '', component: HooomeComponent},
-  {path:'oo',component: LayoutComponent },
+  {path: 'oo', component: LayoutComponent },
   {
     path: 'front',
     component: LayoutComponent,
@@ -50,6 +56,24 @@ const routes: Routes = [
           {path : 'offers', component : OfferListComponent},
           {path : 'addOffer', component : AddOfferComponent},
           {path: 'updateOffer/:id', component: UpdateOfferComponent},
+
+        ]
+      },
+      {
+        path: 'training',
+        children: [
+          {path : 'trainings', component : TrainingComponent},
+          {path : 'addTraining', component : AddTrainingComponent},
+          {path: 'updateTraining/:id', component: UpdateTrainingComponent},
+
+        ]
+      },
+      {
+        path: 'quiz',
+        children: [
+          {path : 'quizs', component : QuizComponent},
+          {path : 'addQuiz', component : AddQuizComponent},
+          {path: 'updateQuiz/:id', component: UpdateQuizComponent},
 
         ]
       },
